@@ -10,7 +10,10 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = ["factory-boy>=3.3.3", "pytest>=9.0.2"]
+dev = [
+    "factory-boy>=3.3.3",
+    "pytest>=9.0.2",
+]
 
 [tool.setuptools.packages.find]
 where = ["./src"]
