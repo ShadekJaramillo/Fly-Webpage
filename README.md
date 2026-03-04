@@ -77,11 +77,18 @@ export default defineConfig([
 ## Project requirements
 
 This project uses configuration scripts, to avoid dealing with long commands constantly, specially for setting up the project this forces the project to require using a Bash teminal.
-To start working on the project make sure you have the next requirements
+To start working on the project make sure you have the next requirements:
 
-- Access to a bash terminal (this can be done through the WSL on windows, installing bash via brew on macOS or natively on linux).
-- pnpm >= 10.30.1 as package manager.
-- build-essential tools installed (usually not included in the WSL)
+- Access to a bash terminal (this can be done through the WSL on windows ([see the installation guide here](https://learn.microsoft.com/en-us/windows/wsl/install)), installing bash via brew on macOS or natively on linux) with build-essential tools installed (usually not included in the WSL but installable using the next command: `sudo apt install build-essential`) or alternatively the `make` command installed for the terminal.
+- `pnpm >= 10.30.1` as package manager. ([see the installation guide here](https://pnpm.io/installation))
+
+## Start the Node dev server
+
+To start the the developer server locally you can use the next command:
+
+```Bash
+pnpm dev
+```
 
 ## Initial Setup
 
@@ -107,7 +114,7 @@ This will install the correct package versions and even the correct python versi
 
 #### 3. Running the server
 
-After setting up the server to run it you just need to execute this command each time:
+After setting up the server, to run it you just need to execute this command each time:
 
 ```Bash
 make run_api_mock
