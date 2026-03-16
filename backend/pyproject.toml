@@ -6,17 +6,37 @@ readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "fastapi[standard]>=0.131.0",
+    "nanoid>=2.0.0",
+    "python-dateutil>=2.9.0.post0",
+    "python-dotenv>=1.2.1",
+    "python-multipart>=0.0.22",
+    "pytz>=2026.1.post1",
     "sqlalchemy>=2.0.46",
 ]
 
 [dependency-groups]
-dev = [
-    "factory-boy>=3.3.3",
-    "pytest>=9.0.2",
-]
+dev = ["factory-boy>=3.3.3", "pytest>=9.0.2", "ruff>=0.15.5"]
 
 [tool.setuptools.packages.find]
 where = ["./src"]
 
 [tool.pytest.ini_options]
 pythonpath = "./src"
+
+[tool.ruff]
+line-length = 80
+target-version = "py313"
+indent-width = 2
+
+[tool.ruff.lint]
+# Enable standard rules + Bugbear (B) and Isort (I)
+select = ["E", "F", "B", "I", "N"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-line-length = 72
+
+[tool.ruff.per-file-ignores]
+# If you want to stop linting/formatting certain files entirely
+"*.md" = ["ALL"]
